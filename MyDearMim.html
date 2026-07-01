@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>💖 MY LoVe MIM 💖</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            background: #1a0b12;
+            position: relative;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 1.2rem;
+        }
+
+        
+        .love-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, #2d1422 0%, #0d0610 100%);
+        }
+
+        .love-rain::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 80, 130, 0.08) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 60%, rgba(255, 150, 200, 0.06) 0%, transparent 50%);
+            animation: glowPulse 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+            100% { opacity: 1; transform: scale(1.1) rotate(3deg); }
+        }
+
+        .love-emoji {
+            position: absolute;
+            font-size: 2.2rem;
+            user-select: none;
+            opacity: 0.7;
+            animation: floatLove linear infinite;
+            will-change: transform;
+            filter: drop-shadow(0 0 10px rgba(255, 80, 130, 0.3));
+        }
+
+        @keyframes floatLove {
+            0% {
+                transform: translateY(110vh) scale(0.4) rotate(0deg) translateX(0);
+                opacity: 0.1;
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% {
+                transform: translateY(-10vh) scale(1.3) rotate(720deg) translateX(30px);
+                opacity: 0.1;
+            }
+        }
+
+        .love-emoji.twinkle {
+            animation: floatLoveTwinkle linear infinite;
+        }
+
+        @keyframes floatLoveTwinkle {
+            0% {
+                transform: translateY(110vh) scale(0.3) rotate(0deg) translateX(-20px);
+                opacity: 0;
+            }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% {
+                transform: translateY(-10vh) scale(1.5) rotate(1080deg) translateX(40px);
+                opacity: 0;
+            }
+        }
+
+        
+        .card {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 245, 248, 0.10);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            border-radius: 48px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7),
+                        0 0 0 1px rgba(255, 180, 200, 0.12) inset,
+                        0 0 60px rgba(255, 80, 120, 0.15);
+            border: 1px solid rgba(255, 220, 235, 0.15);
+            transition: all 0.4s ease;
+            text-align: center;
+            margin: 0.5rem auto;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, rgba(255, 100, 150, 0.1), rgba(255, 200, 220, 0.05), rgba(255, 100, 150, 0.1));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.5;
+            animation: borderGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+
+        
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ffe2ed;
+            letter-spacing: 3px;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            text-shadow: 0 4px 30px rgba(255, 80, 130, 0.4);
+        }
+
+        h1 span {
+            background: rgba(255, 180, 200, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.1rem 1rem;
+            border-radius: 80px;
+            font-size: 1.8rem;
+            border: 1px solid rgba(255, 200, 220, 0.15);
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #fccfdf;
+            background: rgba(255, 200, 220, 0.10);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 0.3rem 1.8rem;
+            border-radius: 60px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 200, 215, 0.10);
+        }
+
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #fad8e6;
+            background: rgba(255, 200, 220, 0.06);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 200, 215, 0.06);
+        }
+
+        #scoreDisplay {
+            background: rgba(255, 80, 130, 0.15);
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
+
+        
+        .question-box {
+            background: rgba(255, 250, 252, 0.04);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 220, 235, 0.06);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff0f6;
+            line-height: 1.4;
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-word;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .option-btn {
+            background: rgba(255, 245, 248, 0.06);
+            backdrop-filter: blur(6px);
+            border: 1.5px solid rgba(255, 200, 220, 0.12);
+            padding: 0.9rem 0.4rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fbeaf0;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            word-break: break-word;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            min-height: 52px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            left: 100%;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 220, 235, 0.15);
+            transform: scale(1.03);
+            border-color: #ff8eb0;
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn.correct {
+            background: rgba(110, 220, 150, 0.25);
+            border-color: #6ee6a0;
+            box-shadow: 0 0 30px rgba(110, 230, 160, 0.2), 0 4px 0 rgba(0, 0, 0, 0.15);
+            color: #d4ffe6;
+            pointer-events: none;
+        }
+
+        .option-btn.wrong {
+            background: rgba(230, 80, 100, 0.25);
+            border-color: #f5687a;
+            box-shadow: 0 0 30px rgba(230, 80, 100, 0.2), 0 4px 0 rgba(0, 0, 0, 0.15);
+            color: #ffd6dc;
+            pointer-events: none;
+        }
+
+        .option-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        
+        .feedback-area {
+            min-height: 3.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 0.2rem 0 0.4rem;
+            color: #ffeef4;
+            background: rgba(255, 200, 220, 0.04);
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(255, 200, 215, 0.04);
+        }
+
+        
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .action-btn {
+            background: rgba(255, 240, 245, 0.06);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 200, 220, 0.10);
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fce2ec;
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+            background: rgba(255, 180, 200, 0.06);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex: 1 1 auto;
+            min-width: 110px;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .action-btn:hover::before {
+            left: 100%;
+        }
+
+        .action-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .action-btn.reset-btn {
+            background: rgba(255, 200, 220, 0.06);
+            border-color: rgba(255, 180, 200, 0.10);
+        }
+
+        .action-btn.share-btn {
+            background: rgba(255, 100, 150, 0.15);
+            border-color: rgba(255, 120, 170, 0.2);
+            display: none;
+        }
+
+        .action-btn.share-btn.show {
+            display: flex;
+        }
+
+        .action-btn.share-btn:hover {
+            background: rgba(255, 100, 150, 0.25);
+        }
+
+        
+        .love-message {
+            margin-top: 1.2rem;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 200, 220, 0.06);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 200, 215, 0.06);
+            min-height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typewriter-text {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #fccfdf;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 20px rgba(255, 80, 130, 0.15);
+            min-height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+
+        .typewriter-text .cursor-blink {
+            display: inline-block;
+            width: 3px;
+            height: 1.4rem;
+            background: #ff8eb0;
+            margin-left: 4px;
+            animation: blink 0.8s step-end infinite;
+            border-radius: 4px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typewriter-text .highlight-name {
+            color: #ffb3c9;
+            font-weight: 600;
+            text-shadow: 0 0 30px rgba(255, 130, 180, 0.4);
+            background: rgba(255, 130, 180, 0.1);
+            padding: 0 0.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 130, 180, 0.15);
+        }
+
+        .footer-heart {
+            margin-top: 1.2rem;
+            font-size: 1.6rem;
+            color: rgba(255, 180, 210, 0.5);
+            letter-spacing: 6px;
+            text-shadow: 0 0 30px rgba(255, 80, 130, 0.2);
+        }
+
+        
+        @media (max-width: 550px) {
+            body {
+                padding: 0.8rem;
+                align-items: flex-start;
+            }
+            .card {
+                padding: 1.5rem 0.9rem;
+                border-radius: 36px;
+                margin: 0;
+            }
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            .question-text {
+                font-size: 1.2rem;
+                min-height: 3.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h1 span {
+                font-size: 1.4rem;
+                padding: 0.1rem 0.8rem;
+            }
+            .option-btn {
+                font-size: 0.9rem;
+                padding: 0.7rem 0.3rem;
+                min-height: 44px;
+            }
+            .subhead {
+                font-size: 1rem;
+                padding: 0.2rem 1.2rem;
+            }
+            .progress-info {
+                font-size: 0.9rem;
+                padding: 0.4rem 1rem;
+            }
+            .feedback-area {
+                font-size: 0.95rem;
+                min-height: 2.8rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .action-btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+                min-width: 90px;
+            }
+            .love-emoji {
+                font-size: 1.4rem;
+            }
+            .footer-heart {
+                font-size: 1.3rem;
+                letter-spacing: 4px;
+            }
+            .typewriter-text {
+                font-size: 1rem;
+            }
+            .love-message {
+                padding: 0.6rem 0.8rem;
+                min-height: 3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .card {
+                padding: 1.2rem 0.7rem;
+                border-radius: 28px;
+            }
+            .question-text {
+                font-size: 1.1rem;
+                min-height: 3rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .option-btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 0.3rem;
+                min-height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="love-rain" id="loveRain"></div>
+
+    
+    <div class="card" id="quizCard">
+        <h1>
+            <span>❤️</span> কুইজ <span>❤️</span>
+        </h1>
+        <div class="subhead">💋 শুধু প্রিয় মিম এর জন্য 💋</div>
+
+        
+        <div class="progress-info">
+            <span id="questionCounter">প্রশ্ন ১/৫</span>
+            <span id="scoreDisplay">❤️ ০</span>
+        </div>
+
+        
+        <div class="question-box">
+            <div class="question-text" id="questionText">লোড হচ্ছে...</div>
+            <div class="options-grid" id="optionsContainer"></div>
+            <div class="feedback-area" id="feedbackMessage">✨ তোমার উত্তর দাও ✨</div>
+        </div>
+
+        
+        <div class="btn-group">
+            <button class="action-btn reset-btn" id="resetBtn">🔄 আবার শুরু</button>
+            <button class="action-btn share-btn" id="shareBtn">💕 শেয়ার করো</button>
+        </div>
+
+        
+        <div class="love-message">
+            <div class="typewriter-text" id="typewriterText">
+                <span>💖</span>
+                <span>আমি তোমার</span>
+                <span class="highlight-name">সজিব</span>
+                <span class="cursor-blink"></span>
+            </div>
+        </div>
+
+        <div class="footer-heart">💖 SAJIB💘MIM 💖</div>
+    </div>
+
+    <script>
+        (function() {
+            
+            const questions = [{
+                question: "যেদিন প্রথম দেখি, মনে হলো— এই মানুষটা আমার জন্য। তুমি কি মনে করো?",
+                options: ["হ্যাঁ, আমিও তাই ভেবেছিলাম", "না, আমি অন্যরকম", "মনে নেই", "আমি তো তোমাকে দেখিনি"],
+                correct: 0
+            }, {
+                question: "আমাদের ভালোবাসা কোন গানের মতো?",
+                options: ["শাশ্বত প্রেমের গান", "রোমান্টিক বলিউড", "শুধুই তোমার জন্য", "হৃদয়ের টুকরো"],
+                correct: 0
+            }, {
+                question: "আমার স্মৃতিতে তুমি কোন ফুলের মতো?",
+                options: ["লাল গোলাপ", "সাদা জুঁই", "নীল অর্কিড", "হলুদ গাঁদা"],
+                correct: 0
+            }, {
+                question: "শেষ নিঃশ্বাস পর্যন্ত আমি কার সাথে থাকতে চাই?",
+                options: ["শুধু তোমার সাথে", "পরিবারের সাথে", "বন্ধুদের সাথে", "একা"],
+                correct: 0
+            }, {
+                question: "আমাদের সম্পর্কের রঙ কোনটা?",
+                options: ["গোলাপি ভালোবাসা", "লাল আবেগ", "নীল গভীরতা", "সোনালি স্মৃতি"],
+                correct: 0
+            }];
+
+            
+            const questionText = document.getElementById('questionText');
+            const optionsContainer = document.getElementById('optionsContainer');
+            const feedbackMessage = document.getElementById('feedbackMessage');
+            const resetBtn = document.getElementById('resetBtn');
+            const shareBtn = document.getElementById('shareBtn');
+            const questionCounter = document.getElementById('questionCounter');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const typewriterEl = document.getElementById('typewriterText');
+
+            let currentIndex = 0;
+            let score = 0;
+            let isAnswered = false;
+            let quizEnded = false;
+            let autoTimer = null;
+
+            
+            const loveMessages = [
+                '💖 আমি তোমার সজিব 💖',
+                '❤️ তুমি আমার সবকিছু ❤️',
+                '💕 তুমি ছাড়া আমি অসম্পূর্ণ 💕',
+                '✨ তুমি আমার স্বপ্নের মানুষ ✨',
+                '🌹 আমি তোমাকে ভালোবাসি 🌹',
+                '💗 তুমি আমার হৃদয়ের রানী 💗'
+            ];
+
+            let messageIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typeTimer = null;
+
+            function typewriterEffect() {
+                const currentText = loveMessages[messageIndex];
+                if (!isDeleting) {
+                    
+                    typewriterEl.innerHTML = currentText.substring(0, charIndex + 1) +
+                        '<span class="cursor-blink"></span>';
+                    charIndex++;
+
+                    if (charIndex === currentText.length) {
+                        isDeleting = true;
+                        typeTimer = setTimeout(typewriterEffect, 2500);
+                        return;
+                    }
+                    typeTimer = setTimeout(typewriterEffect, 80);
+                } else {
+                    
+                    typewriterEl.innerHTML = currentText.substring(0, charIndex - 1) +
+                        '<span class="cursor-blink"></span>';
+                    charIndex--;
+
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        messageIndex = (messageIndex + 1) % loveMessages.length;
+                        typeTimer = setTimeout(typewriterEffect, 400);
+                        return;
+                    }
+                    typeTimer = setTimeout(typewriterEffect, 50);
+                }
+            }
+
+            
+            setTimeout(typewriterEffect, 600);
+
+            
+            function createLoveRain() {
+                const container = document.getElementById('loveRain');
+                const emojis = ['❤️', '💖', '💗', '💕', '♥️', '💘', '💝', '✨', '🌸', '🌹', '💞', '💓', '🌺', '🫀'];
+                const count = 60;
+
+                for (let i = 0; i < count; i++) {
+                    const span = document.createElement('span');
+                    const isTwinkle = Math.random() > 0.6;
+                    span.className = `love-emoji${isTwinkle ? ' twinkle' : ''}`;
+                    span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    const size = 1.2 + Math.random() * 2.6;
+                    span.style.fontSize = size + 'rem';
+                    span.style.left = Math.random() * 100 + '%';
+                    const duration = 14 + Math.random() * 22;
+                    span.style.animationDuration = duration + 's';
+                    span.style.animationDelay = Math.random() * 20 + 's';
+                    span.style.opacity = 0.15 + Math.random() * 0.5;
+                    span.style.filter = `drop-shadow(0 0 ${5 + Math.random() * 18}px rgba(255, 80, 130, ${0.1 + Math.random() * 0.25}))`;
+                    container.appendChild(span);
+                }
+            }
+            createLoveRain();
+
+            
+            function loadQuestion(index) {
+                if (autoTimer) {
+                    clearTimeout(autoTimer);
+                    autoTimer = null;
+                }
+
+                isAnswered = false;
+                quizEnded = false;
+                shareBtn.classList.remove('show');
+
+                const q = questions[index];
+                if (!q) {
+                    showQuizEnd();
+                    return;
+                }
+
+                questionText.textContent = q.question;
+                optionsContainer.innerHTML = '';
+
+                q.options.forEach((optionText, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.textContent = optionText;
+                    btn.dataset.index = idx;
+                    btn.addEventListener('click', () => handleOptionClick(btn, idx, q.correct));
+                    optionsContainer.appendChild(btn);
+                });
+
+                questionCounter.textContent = `প্রশ্ন ${index+1}/${questions.length}`;
+                scoreDisplay.textContent = `❤️ ${score}`;
+                feedbackMessage.innerHTML = '✨ তোমার উত্তর দাও ✨';
+
+                document.querySelectorAll('.option-btn').forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('correct', 'wrong');
+                });
+            }
+
+            function handleOptionClick(btn, selectedIdx, correctIdx) {
+                if (isAnswered || quizEnded) return;
+                if (btn.disabled) return;
+
+                if (autoTimer) {
+                    clearTimeout(autoTimer);
+                    autoTimer = null;
+                }
+
+                const allOptions = document.querySelectorAll('.option-btn');
+                allOptions.forEach(opt => opt.disabled = true);
+
+                const isCorrect = (selectedIdx === correctIdx);
+                if (isCorrect) {
+                    score += 1;
+                    scoreDisplay.textContent = `❤️ ${score}`;
+                    feedbackMessage.innerHTML = '🥰 সত্যিই! তুমি আমার হৃদয় জানো ❤️‍🔥';
+                } else {
+                    feedbackMessage.innerHTML = '😢 ওহ না! কিন্তু তুমি তো আমার সবকিছু 💔';
+                }
+
+                allOptions.forEach((opt, idx) => {
+                    if (idx === correctIdx) {
+                        opt.classList.add('correct');
+                    } else if (idx === selectedIdx && !isCorrect) {
+                        opt.classList.add('wrong');
+                    }
+                });
+
+                isAnswered = true;
+
+                if (currentIndex === questions.length - 1) {
+                    autoTimer = setTimeout(() => {
+                        showQuizEnd();
+                    }, 1500);
+                } else {
+                    autoTimer = setTimeout(() => {
+                        goToNextQuestion();
+                    }, 1200);
+                }
+            }
+
+            function goToNextQuestion() {
+                if (autoTimer) {
+                    clearTimeout(autoTimer);
+                    autoTimer = null;
+                }
+                if (quizEnded) return;
+                if (currentIndex < questions.length - 1) {
+                    currentIndex++;
+                    loadQuestion(currentIndex);
+                } else {
+                    showQuizEnd();
+                }
+            }
+
+            function showQuizEnd() {
+                if (autoTimer) {
+                    clearTimeout(autoTimer);
+                    autoTimer = null;
+                }
+                quizEnded = true;
+                questionText.textContent = `💖 তুমি আমার 💖`;
+                optionsContainer.innerHTML = '';
+                feedbackMessage.innerHTML = `তুমি পেলে ${score}/${questions.length} ❤️  তুমি আমার অনন্ত ভালোবাসা!`;
+                questionCounter.textContent = `শেষ!`;
+                scoreDisplay.textContent = `❤️ ${score}`;
+
+                shareBtn.classList.add('show');
+            }
+
+            function resetQuiz() {
+                if (autoTimer) {
+                    clearTimeout(autoTimer);
+                    autoTimer = null;
+                }
+                currentIndex = 0;
+                score = 0;
+                isAnswered = false;
+                quizEnded = false;
+                shareBtn.classList.remove('show');
+                loadQuestion(0);
+                scoreDisplay.textContent = `❤️ ০`;
+                feedbackMessage.innerHTML = '✨ নতুন শুরু! ভালোবাসা ছড়িয়ে দাও ✨';
+                document.querySelectorAll('.option-btn').forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('correct', 'wrong');
+                });
+            }
+
+            
+            function shareQuiz() {
+                const url = window.location.href;
+                const text = `💖 প্রিয় মিম এর জন্য ভালোবাসার কুইজ! ❤️\nআমি পেয়েছি ${score}/${questions.length} স্কোর! তুমি কি পারবে?\n\n${url}`;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: '💖 ভালোবাসার কুইজ',
+                        text: text,
+                        url: url
+                    }).catch(() => {});
+                } else {
+                    navigator.clipboard.writeText(text).then(() => {
+                        const originalMsg = feedbackMessage.innerHTML;
+                        feedbackMessage.innerHTML = '✅ লিঙ্ক কপি! শেয়ার করে দাও 💕';
+                        setTimeout(() => {
+                            if (!quizEnded) {
+                                feedbackMessage.innerHTML = originalMsg;
+                            } else {
+                                feedbackMessage.innerHTML = `তুমি পেলে ${score}/${questions.length} ❤️  তুমি আমার অনন্ত ভালোবাসা!`;
+                            }
+                        }, 2500);
+                    }).catch(() => {
+                        prompt('এই টেক্সট কপি করে শেয়ার করো:', text);
+                    });
+                }
+            }
+
+            
+            resetBtn.addEventListener('click', resetQuiz);
+            shareBtn.addEventListener('click', shareQuiz);
+
+            
+            loadQuestion(0);
+
+        })();
+    </script>
+
+</body>
+</html>
